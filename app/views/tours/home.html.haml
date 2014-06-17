@@ -1,0 +1,18 @@
+.well
+  %h1.text-center Свежие туры
+  .list-group
+    - @tours.each do |tour|
+      %a.list-group-item.active{:href => "#"}
+        .col-md-9
+          %h4.list-group-item-heading= "#{tour.country} (#{tour.city})"
+          %p.list-group-item-text= tour.description
+        .col-md-3.text-center
+          %h2
+            = tour.price
+            %small
+              Рублей
+
+        = link_to 'Заказать', "/booking/#{tour.id}/add" if can? :add, Booking
+        = link_to 'Подробнее', tour if can? :show, Tour
+        = link_to 'Изменить', edit_tour_path(tour) if can? :edit, Tour
+        = link_to 'Удалить', tour, :method => :delete, :data => { :confirm => 'Вы уверены?' } if can? :delete, Tour

@@ -1,0 +1,11 @@
+%h1 Список заказов
+
+%table.table
+  %tr
+    %th Email
+    %th Тур
+
+  - @bookings.each do |booking|
+    %tr
+      %td= link_to booking.user.email, '#'
+      %td= link_to "#{booking.tour.country} (#{booking.tour.city})", "/tours/#{booking.tour.id}"

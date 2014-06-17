@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Страна:
+  = @tour.country
+%p
+  %b Город:
+  = @tour.city
+%p
+  %b Начало:
+  = @tour.begin_at
+%p
+  %b Окончание:
+  = @tour.expected_at
+%p
+  %b Вид транспорта:
+  = @tour.transport
+%p
+  %b Вид путешествия:
+  = @tour.travel
+%p
+  %b Стоимость:
+  = @tour.price
+%p
+  %b Описание:
+  = @tour.description
+
+= link_to 'Изменить', edit_tour_path(@tour)
+\|
+= link_to 'Вернуться', tours_path

@@ -1,0 +1,1 @@
+Turistico::Application.config.secret_token = "ee276d240dcab593515591592d7cb6da70637c66ffdc7e3e20708385317a62d541f9ec0571b10306ef408ffedb4b7addb306cf265239fadfd24b5119fa5ec8d5"

@@ -1,0 +1,12 @@
+%h1 Список пользователей
+
+%table.table
+  %tr
+    %th Email
+    %th= "Role" if can? :change_role, User
+    %th
+
+  - @users.each do |user|
+    %tr
+      %td= link_to user.email, '#'
+      %td= link_to user.roles.to_a.first.name, [user, :change_role] if can? :change_role, User
